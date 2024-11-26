@@ -66,18 +66,20 @@ A aplicação utiliza um arquivo server.json para armazenar os dados dos agendam
 // Exemplo de listagem de agendamentos
 [
   {
-    "id": 1,
-    "cliente": "Maria Silva",
-    "servico": "Banho e Tosa",
-    "data": "2024-11-27",
-    "periodo": "manhã"
-  },
-  {
-    "id": 2,
-    "cliente": "João Pereira",
-    "servico": "Vacinação",
-    "data": "2024-11-27",
-    "periodo": "tarde"
-  }
+      "id": "1732558545582",
+      "tutor_name": "Helena",
+      "pet_name": "Cheddar",
+      "service_description": "Banho",
+      "date": "2024-11-26",
+      "time": "18:15"
+    },
+    {
+      "id": "1732572436459",
+      "tutor_name": "Mirian",
+      "pet_name": "Balofo",
+      "service_description": "banho e corte de unhas",
+      "date": "2024-11-26",
+      "time": "19:02"
+    },
 ]
 ```
