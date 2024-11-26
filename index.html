@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,700;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="./src/assets/dog-duotone.svg"
+    />
+    
+    <title>Mundo pet</title>
+  </head>
+  <body>
+    <div id="logo">
+      <img src="src/assets/dog-duotone.svg" alt="Logotipo" />
+      <p>mundo pet</p>
+    </div>
+    <div id="app" class="blur">
+      <header>
+        <div id="agenda-header">
+          <h1>Sua agenda</h1>
+          <p>
+            Aqui você pode ver todos os clientes e serviços agendados para hoje.
+          </p>
+        </div>
+
+        <div id="agenda-calendar">
+          <img
+            src="src/assets/Calendar-Minimalistic--Streamline-Solar.svg"
+            alt="Ícone de calendário"
+          />
+          <input
+            type="date"
+            id="field-calendar"
+            name="field-calendar"
+            placeholder="10/01/2024"
+            aria-label="Selecione uma data"
+          />
+          <img class="open-calendar" src="src/assets/Icon.svg" alt="Ícone de outra ação" />
+        </div>
+      </header>
+
+      <main>
+        <section class="section-wrapper">
+          <div class="header-wrapper">
+            <div class="title-wrapper">
+              <img
+                src="src/assets/Sun-Fog--Streamline-Solar.svg"
+                alt="Ícone do sol"
+              />
+              <h2>Manhã</h2>
+            </div>
+            <time datetime="09:00-12:00">09h-12h</time>
+          </div>
+          <div class="scheduled-times">
+            <ul id="period-morning">
+            </ul>
+          </div>
+        </section>
+        <section class="section-wrapper">
+          <div class="header-wrapper">
+            <div class="title-wrapper">
+              <img
+                src="src/assets/Cloud-Sun-4--Streamline-Solar.svg"
+                alt="Ícone do sol"
+              />
+              <h2>Tarde</h2>
+            </div>
+            <time datetime="13:00-18:00">13h-18h</time>
+          </div>
+          <div class="scheduled-times">
+            <ul id="period-afternoon">
+            </ul>
+          </div>
+        </section>
+        <section class="section-wrapper">
+          <div class="header-wrapper">
+            <div class="title-wrapper">
+              <img
+                src="src/assets/Moon-Stars--Streamline-Solar.svg"
+                alt="Ícone do sol"
+              />
+              <h2>Noite</h2>
+            </div>
+            <time datetime="19:00-21:00">19h-21h</time>
+          </div>
+          <div class="scheduled-times">
+            <ul id="period-night">
+            </ul>
+          </div>
+        </section>
+      </main>
+      <div id="scheduled-bar">
+  <button
+    id="scheduled-button"
+    aria-haspopup="dialog"
+    aria-controls="modal-agendamento"
+    aria-expanded="false"
+  >
+    Novo Agendamento
+  </button>
+</div>
+    </div>
+      <div class="schedule-service hidden" role="dialog">
+        <div id="service-wrapper">
+          <h1>Agende um atendimento</h1>
+          <p>Preencha os dados do cliente para realizar o agendamento:</p>
+        </div>
+        <form aria-labelledby="service-schedule">
+          <div class="field-wrapper">
+            <label for="field-tutor">Nome do tutor</label>
+            <div class="input-wrapper">
+              <img
+                src="src/assets/User--Streamline-Solar.svg"
+                alt="Ícone de usuário"
+              />
+              <input
+                type="text"
+                id="field-tutor"
+                name="tutor-name"
+                placeholder="Helena Souza"
+                required
+              />
+            </div>
+          </div>
+          <div class="field-wrapper">
+            <label for="field-pet">Nome do pet</label>
+            <div class="input-wrapper">
+              <img
+                src="src/assets/Pet-Paw--Streamline-Core.svg"
+                alt="Ícone de pata de pet"
+              />
+              <input
+                type="text"
+                id="field-pet"
+                name="pet-name"
+                placeholder="Cheddar"
+                required
+              />
+            </div>
+          </div>
+          <div class="field-wrapper">
+            <label for="field-phone">Telefone</label>
+            <div class="input-wrapper">
+              <img
+                src="src/assets/Phone--Streamline-Solar.svg"
+                alt="Ícone de telefone"
+              />
+              <input
+                type="tel"
+                id="field-phone"
+                name="phone"
+                placeholder="(00) 0 0000-0000"
+                required
+              />
+            </div>
+          </div>
+          <div class="field-wrapper">
+            <label for="field-service-description">Descrição do serviço</label>
+            <textarea
+              id="field-service-description"
+              name="service-description"
+              placeholder="Banho e tosa"
+              required
+            ></textarea>
+          </div>
+          <div class="datetime-wrapper">
+            <div class="field-wrapper">
+              <label for="field-date">Data</label>
+              <div class="input-wrapper">
+                <img
+                  src="src/assets/Calendar-Minimalistic--Streamline-Solar.svg"
+                  alt="Ícone de calendário"
+                />
+                <input
+                  type="date"
+                  id="field-date"
+                  name="date"
+                  placeholder="10/01/2024"
+                  required
+                />
+                <img class="open-calendar" src="src/assets/Icon.svg" alt="Ícone de outra ação" />
+              </div>
+            </div>
+            <div class="field-wrapper">
+              <label for="field-time">Hora</label>
+              <div class="input-wrapper">
+                <img
+                  src="src/assets/Clock-Circle.svg"
+                  alt="Ícone de relógio"
+                />
+                <input
+                  type="time"
+                  id="field-time"
+                  name="time"
+                  value="12:00"
+                  required
+                />
+                <img class="open-time" src="src/assets/Icon.svg" alt="Ícone de outra ação" />
+              </div>
+            </div>
+          </div>
+          <button type="submit">Agendar</button>
+        </form>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,86 @@
+.scheduled-times {
+  margin: 0.75rem 1.25rem;
+  
+  & ul {
+    & .appointment {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.75rem;
+      border-top: solid 1px var(--border-primary);
+      border-inline: none;
+
+      & .appointment-header {
+        display: flex;
+        gap: 2.25rem;
+        align-items: center;
+
+        & time {
+          color: var(--content-primary);
+          font: var(--label-medium);  
+        }
+
+        & .animal-tutor {
+          & strong {
+            color: var(--content-primary);
+            font: var(--label-small); 
+          }
+
+          & .tutor {
+            color: var(--content-secondary);
+            font: var(--paragraph-small);
+          }
+        }
+      }
+
+      & .service {
+        color: var(--content-secondary);
+        font: var(--paragraph-small);
+      }
+
+      & .scheduled-remove {
+        color: var(--content-secondary);
+        font: var(--paragraph-small);  
+      }
+
+      & .scheduled-remove:hover {
+        color: var(--content-primary);
+        text-decoration: underline; 
+      }
+    }
+  }
+}
+
+@media (max-width: 390px) {
+  body {
+    overflow-x: hidden;
+
+    & main {
+      & .section-wrapper {
+        & .scheduled-times {
+          & ul {
+            & .appointment {
+              display: flex;
+              flex-direction: column;
+              align-items: flex-start;
+
+              & .appointment-header {
+                display: flex;
+                gap: 0.75rem;
+                
+                & .animal-tutor {
+                  display: flex;
+                  gap: 0.25rem;
+                }
+              }
+
+              & .scheduled-remove {
+                align-self: flex-end;
+              }
+            }
+          }
+        }
+      }
+    }      
+  }
+}

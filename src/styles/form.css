@@ -1,0 +1,189 @@
+& .schedule-service {
+  position: absolute;
+  z-index: 100;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  filter: none;
+  width: 29.8125rem;
+  padding: 2rem;
+  background: var(--background-tertiary);
+  border-radius: 0.75rem;
+
+  & #service-wrapper {
+    margin-bottom: 1.75rem;
+
+    & h1 {
+      color: var(--content-primary);
+      font: var(--title);
+    }
+
+    & p {
+      color: var(--content-secondary);
+      font: var(--paragraph-medium);
+    }
+  }
+
+  & .field-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+
+    & label {
+      color: var(--content-primary);
+      font: var(--label-medium);
+      margin-bottom: 0.375rem;
+    }
+
+    & input::placeholder,
+    & textarea::placeholder {
+      font: var(--placeholder-font);
+      color: var(--content-secondary);
+    }
+
+    & .input-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: solid 1px var(--border-primary);
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      font: var();
+      transition: border 0.3s ease;
+      position: relative;
+
+      & .open-time {
+        position: absolute;
+        right: 10%;
+      }
+
+      & .open-calendar {
+        position: absolute;
+        right: 5%;
+      }
+    }
+
+    & #field-service-description {
+      margin: 0;
+      padding: 0;
+      border: none;
+      resize: none;
+      outline: none;
+      box-shadow: none;
+      background-color: transparent;
+      border: solid 1px var(--border-primary);
+      border-radius: 0.5rem;
+      padding: 0.75rem;
+      height: 5.1875rem;
+      transition: border 0.3s ease, color 0.3s ease;
+    }
+
+    & .input-wrapper:hover,
+    & #field-service-description:hover {
+      border: 1px solid var(--border-secondary);
+    }
+
+    & .input-wrapper:focus-within,
+    & #field-service-description:focus {
+      border: 1px solid var(--border-brand);
+      color: var(--content-primary);
+
+      &::placeholder {
+        color: var(--content-primary);
+      }
+    }
+
+    & input:focus,
+    & textarea:focus {
+      color: var(--content-primary);
+    }
+
+    & input:not(:placeholder-shown),
+    & textarea:not(:placeholder-shown) {
+      color: var(--content-primary);
+    }
+  }
+
+  & .datetime-wrapper {
+    display: flex;
+    gap: 1rem;
+
+    & .field-wrapper {
+      flex: 1;
+
+      & input {
+        width: 100%;
+        font: var(--placeholder-font);
+        color: var(--content-secondary);
+        text-align: center;
+        transition: border 0.3s ease, color 0.3s ease;
+      }
+
+      & input[type="time"] {
+        text-align: left;
+      }
+
+      & input::-webkit-calendar-picker-indicator {
+        opacity: 0;
+        z-index: 1;
+      }
+    }
+  }
+
+  & button {
+    text-transform: uppercase;
+    font: var(--label-large);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    background: var(--content-brand);
+    align-self: flex-end;
+  }
+
+  & button:hover {
+    background: var(--background-highlights);
+  }
+
+  &.hidden {
+    display: none;
+  }
+}
+
+@media (max-width: 390px) {
+  body {
+    overflow-x: hidden;
+
+    & .schedule-service {
+      overflow-x: hidden;
+      width: 100%;
+      max-width: 21.875rem;
+      margin-top: 8.75rem;
+      display: flex;
+      flex-direction: column;
+      top: 340%;
+
+      & .datetime-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        & .field-wrapper {
+          & .open-time {
+            position: absolute;
+            right: 8%;
+          }
+
+          & .open-calendar {
+            position: absolute;
+            right: 8%;
+          }
+
+          & input,
+          & input[type="date"] {
+            text-align: left;
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}

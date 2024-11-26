@@ -1,0 +1,61 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4.25rem;
+
+  & #agenda-header {
+    & h1 {
+      color: var(--content-primary);
+      font: var(--title);
+    }
+
+    & p {
+      color: var(--content-secondary);
+      font: var(--paragraph-medium);
+    }
+  }
+
+  #agenda-calendar {
+    border: solid 1px var(--border-primary);
+    border-radius: 0.5rem; 
+    display: flex;
+    padding: 0.75rem;
+    width: auto;
+
+    & input {
+      color: var(--content-secondary);
+      text-align: center;
+    }
+
+    & .open-calendar {
+      position: absolute;
+      left: 75.8%;
+    }
+
+    & input::-webkit-calendar-picker-indicator {
+      opacity: 0;
+      z-index: 1;
+    }
+
+    &:hover {
+      border: 1px solid var(--border-secondary);
+    }
+
+    &:focus-within {
+      border: 1px solid var(--border-brand);
+    }
+
+    & input:focus {
+      color: var(--content-primary);
+    }
+
+    & input:not(:placeholder-shown) {
+      color: var(--content-primary);
+    }
+
+    & input:focus::placeholder {
+      color: var(--content-primary);
+    }
+  }
+}
